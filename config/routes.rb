@@ -2,6 +2,14 @@ MediaSite::Application.routes.draw do
 
   match '/home', :to => 'pages#home'
 
+  match '/music', :to => 'pages#music'
+
+  match '/movie', :to => 'pages#movie'
+  
+  match '/television', :to => 'pages#television'
+
+  match '/maintenance', :to => 'pages#maintenance'
+
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:
