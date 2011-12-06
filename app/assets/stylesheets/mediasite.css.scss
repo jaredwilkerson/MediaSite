@@ -1,12 +1,9 @@
 /*
-Document   : mediasite.css
-Created on : Jul 2, 2010, 8:24:51 AM
-Author     : wilkersonj
+Document   : mediasite.css.scss
+Created on : Dec 5, 2011
+Author     : Jared Wilkerson
 Description:
-    Purpose of the stylesheet follows.
-*/
-
-/*
+             
 The main style-sheet for the website.
 */
 
@@ -30,8 +27,15 @@ The main style-sheet for the website.
 
 $primary-color:#CCCCCC;
 $accent-color:#808080;
+$font-color: #000000;
+$link-highlight-color: #FFFFFF;
+$border-properties: 1px solid #000000;
 
-$full-width: 752px;
+$full-width: 753px;
+$content-link-width: 251px;
+$maintenance-content-window-width: 310px;
+$category-column-width: 249px;
+
 body
 {
   font-family:sans-serif;
@@ -44,19 +48,19 @@ h3
 
 a
 {
-  color: black;
+  color: $font-color;
   text-decoration: none;
   font-size:large;
 
   &:visited
   {
-    color: black;
+    color: $font-color;
   }
 
   &:hover
   {
-    background:none;
-    color: white;
+    backgound: $accent-color;
+    color: $link-highlight-color;
   }
 
 
@@ -107,7 +111,7 @@ textarea
 
 .content-link
 {
-  width:251px;
+  width: $content-link-width;
   height:30px;
   padding-top: 12px;
   font-size:large;
@@ -125,13 +129,17 @@ textarea
   &:hover
   {
     background: $accent-color;
+    cursor: pointer;
+    a{
+      color: $link-highlight-color;
+    }
     @include rounded-top-corners;
-     }
+  }
 }
 
 .selected-content-link
 {
-  width:251px;
+  width: $content-link-width;
   height:30px;
   padding-top: 12px;
   font-size:large;
@@ -171,9 +179,9 @@ textarea
 
 .maintenance-window
 {
-  border-left:1px solid black;
-  border-right:1px solid black;
-  border-bottom:1px solid black;
+  border-left: $border-properties;
+  border-right: $border-properties;
+  border-bottom: $border-properties;
   padding-top:1px;
   padding-left:4px;
   padding-right:4px;
@@ -184,22 +192,22 @@ textarea
 
 .movie-maintenance
 {
-  border-bottom:1px solid grey;
+  border-bottom: $border-properties;
   width: $full-width;
-  height:310px;
+  height: $maintenance-content-window-width;
 }      
 
 .show-maintenance
 {
-  border-bottom:1px solid grey;
+  border-bottom: $border-properties;
   width: $full-width;
-  height:310px;
+  height: $maintenance-content-window-width;
 }
 
 .song-maintenance
 {        
   width: $full-width;
-  height:310px;
+  height: $maintenance-content-window-width;
 }
 
 .new-entry
@@ -230,7 +238,7 @@ textarea
   margin-top:1px;
   padding-top:5px;
   padding-bottom:5px;
-  border:1px solid black;
+  border: $border-properties;
   width: $full-width;
   height:400px;
   float:left;
@@ -240,7 +248,7 @@ textarea
 
 .movie-column
 {
-  width:249px;
+  width: $category-column-width;
   height:400px;
   float:left;
   border-right:1px solid $accent-color;
@@ -248,7 +256,7 @@ textarea
 
 .show-column
 {
-  width:249px;
+  width: $category-column-width;
   height:400px;
   float:left;
   border-right:1px solid $accent-color;
@@ -256,22 +264,22 @@ textarea
 
 .music-column
 {
-  width:249px;
+  width: $category-column-width;
   height:400px;
   float:left;
 }
 
 .band-column
 {
-  width:249px;
+  width: $category-column-width;
   height:400px;
   float:left;
   border-right:1px solid $accent-color;
 }
 
-.category-column
+.music-category-column
 {
-  width:249px;
+  width: $category-column-width;
   height:400px;
   float:left;
   border-right:1px solid $accent-color;
@@ -279,7 +287,7 @@ textarea
 
 .playlist-column
 {
-  width:249px;
+  width: $category-column-width;
   height:400px;
   float:left;
 }
