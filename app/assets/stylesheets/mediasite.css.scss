@@ -7,11 +7,31 @@ Description:
 */
 
 /*
-TODO customize this sample style
-Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+The main style-sheet for the website.
 */
 
+@mixin rounded-top-corners {
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
+@mixin rounded-bottom-corners {
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+$primary-color:#CCCCCC;
+$accent-color:#808080;
+
+$full-width: 752px;
 body
 {
   font-family:sans-serif;
@@ -55,14 +75,14 @@ textarea
 
 .header
 {
-  width:752px;
+  width: $full-width;
   height:60px;
   margin:0 auto;
 }
 
 .footer
 {
-  width:752px;
+  width: $full-width;
   height:100px;
   position:relative;
   margin:0 auto;
@@ -76,21 +96,17 @@ textarea
 
 .col-wrapper
 {
-  /*border:1px solid black;*/
-  width: 752px;
+  width: $full-width;
   margin:0 auto;
 }
 
 .middle-col
 {
-  /*border:1px solid black;*/
-  /*height:856px;*/
-  width:752px;
+  width: $full-width;
 }
 
 .content-link
 {
-  /*border:1px solid black;*/
   width:251px;
   height:30px;
   padding-top: 12px;
@@ -108,14 +124,9 @@ textarea
 
   &:hover
   {
-    background:gray;
-    -webkit-border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topleft: 8px;
-    -moz-border-radius-topright: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
+    background: $accent-color;
+    @include rounded-top-corners;
+     }
 }
 
 .selected-content-link
@@ -125,13 +136,8 @@ textarea
   padding-top: 12px;
   font-size:large;
   float:left;
-  background:gray;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  background: $accent-color;
+  @include rounded-top-corners; 
 
   :a
   {
@@ -145,35 +151,22 @@ textarea
 
 .content-links
 {
-  /*border:1px solid black;*/
-
   clear:both;
   text-align:center;
-  width:753px;
+  width: $full-width;
   height: 40px;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background:#CCCCCC;
-  border-bottom:2px solid grey;
+  @include rounded-top-corners;
+  background: $primary-color;
+  border-bottom:2px solid $accent-color;
 }
 
 
 .display-window
 {
-  border:1px solid black;
   background:black;
-  width:751px;
+  width: $full-width;
   height:400px;
-  -webkit-border-bottom-left-radius: 8px;
-  -webkit-border-bottom-right-radius: 8px;
-  -moz-border-radius-bottomleft: 8px;
-  -moz-border-radius-bottomright: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  @include rounded-bottom-corners;
 }
 
 .maintenance-window
@@ -184,35 +177,28 @@ textarea
   padding-top:1px;
   padding-left:4px;
   padding-right:4px;
-  /*background:black;*/
-  width:743px;
-  /*height:932px;*/
+  width: $full-width;
   font-size:small;
-  -webkit-border-bottom-left-radius: 8px;
-  -webkit-border-bottom-right-radius: 8px;
-  -moz-border-radius-bottomleft: 8px;
-  -moz-border-radius-bottomright: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  @include rounded-bottom-corners;
 }
 
 .movie-maintenance
 {
   border-bottom:1px solid grey;
-  width:743px;
+  width: $full-width;
   height:310px;
 }      
 
 .show-maintenance
 {
   border-bottom:1px solid grey;
-  width:743px;
+  width: $full-width;
   height:310px;
 }
 
 .song-maintenance
 {        
-  width:743px;;
+  width: $full-width;
   height:310px;
 }
 
@@ -245,41 +231,31 @@ textarea
   padding-top:5px;
   padding-bottom:5px;
   border:1px solid black;
-  width:751px;
+  width: $full-width;
   height:400px;
   float:left;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  @include rounded-top-corners; 
+  @include rounded-bottom-corners;
 }
 
 .movie-column
 {
-  /*border:1px solid black;*/
-  /*background:green;*/
   width:249px;
   height:400px;
   float:left;
-  border-right:1px solid grey;
+  border-right:1px solid $accent-color;
 }
 
 .show-column
 {
-  /*border:1px solid black;*/
-  /*background:red;*/
   width:249px;
   height:400px;
   float:left;
-  border-right:1px solid grey;
+  border-right:1px solid $accent-color;
 }
 
 .music-column
 {
-  /*border:1px solid black;*/
-  /*background:yellow;*/
   width:249px;
   height:400px;
   float:left;
@@ -287,28 +263,22 @@ textarea
 
 .band-column
 {
-  /*border:1px solid black;*/
-  /*background:green;*/
   width:249px;
   height:400px;
   float:left;
-  border-right:1px solid grey;
+  border-right:1px solid $accent-color;
 }
 
 .category-column
 {
-  /*border:1px solid black;*/
-  /*background:red;*/
   width:249px;
   height:400px;
   float:left;
-  border-right:1px solid grey;
+  border-right:1px solid $accent-color;
 }
 
 .playlist-column
 {
-  /*border:1px solid black;*/
-  /*background:yellow;*/
   width:249px;
   height:400px;
   float:left;
@@ -319,15 +289,10 @@ textarea
   margin-top:1px;
   padding-top:5px;
   padding-bottom:5px;
-  width:750px;
+  width: $full-width;
   height:400px;
   float:left;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  @include rounded-top-corners;
 }
 
 .movie-grid
@@ -335,15 +300,10 @@ textarea
   margin-top:1px;
   padding-top:5px;
   padding-bottom:5px;
-  width:750px;
+  width: $full-width;
   height:400px;
   float:left;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  @include rounded-top-corners 
 }
 
 
