@@ -1,0 +1,22 @@
+<!music index>
+<% content_for :header_links do %>
+  <%= link_to image_tag("home.jpg", :border => 0, :title => "home"), home_path %>
+<%= link_to image_tag("configuration-ns.jpg", :border => 0, :title => "maintenance"), maintenance_path %>
+<% end %>
+
+<% content_for :content_links do %>
+          <div class="content-link" onclick="location.href='<%=movie_path%>'"><%= link_to 'Movies', movie_path %></div>
+          <div class="content-link"onclick="location.href='<%=television_path%>'"><%= link_to 'Shows', television_path %></div>
+          <div class="content-link selected"onclick="location.href='<%=music_path%>'"><%= link_to 'Music', music_path %></div><!this is just a placeholder till I make the music stuff>
+<% end %>
+
+<% content_for :display_window do %>
+  <% end %>
+
+<% content_for :content_column do %>
+        <div class="content-column" style="text-align:center"><!the third row containing the content columns>
+          <div class="left-column"><h3>Music Content</h3></div>
+          <div class="center-column"><h3>More Content</h3></div>
+          <div class="right-column"><h3>More Music</h3></div>
+        </div>
+<% end %>
