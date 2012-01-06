@@ -3,9 +3,9 @@ Document   : mediasite.css.scss
 Created on : Dec 5, 2011
 Author     : Jared Wilkerson
 Description:
-             
+
 The main style-sheet for the website.
-*/
+ */
 
 @mixin rounded-top-corners {
   -webkit-border-top-left-radius: 8px;
@@ -135,26 +135,27 @@ textarea
     }
     @include rounded-top-corners;
   }
-}
-
-.selected-content-link
-{
-  width: $content-link-width;
-  height:30px;
-  padding-top: 12px;
-  font-size:large;
-  float:left;
-  background: $accent-color;
-  @include rounded-top-corners; 
-
-  :a
+  &.selected
   {
-    display:block;
-    width:100%;
-    height:100%;
-    text-decoration: none;
+    width: $content-link-width;
+    height:30px;
+    padding-top: 12px;
+    font-size:large;
+    float:left;
+    background: $accent-color;
+    @include rounded-top-corners; 
+
+    :a
+    {
+      display:block;
+      width:100%;
+      height:100%;
+      text-decoration: none;
+    }
   }
+
 }
+
 
 
 .content-links
