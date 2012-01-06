@@ -143,7 +143,7 @@ textarea
     font-size:large;
     float:left;
     background: $accent-color;
-    @include rounded-top-corners; 
+    @include rounded-top-corners;
 
     :a
     {
@@ -184,31 +184,19 @@ textarea
   border-right: $border-properties;
   border-bottom: $border-properties;
   padding-top:1px;
-  padding-left:4px;
-  padding-right:4px;
-  width: $full-width;
+  /*padding-left:4px;*/
+  /*padding-right:4px;*/
+  width: $full-width - 2px;
   font-size:small;
   @include rounded-bottom-corners;
-}
 
-.movie-maintenance
-{
-  border-bottom: $border-properties;
-  width: $full-width;
-  height: $maintenance-content-window-width;
-}      
+  .content-maintenance-box
+  {
+    border-bottom: $border-properties;
+    width: $full-width;
+    height: $maintenance-content-window-width;
+  }
 
-.show-maintenance
-{
-  border-bottom: $border-properties;
-  width: $full-width;
-  height: $maintenance-content-window-width;
-}
-
-.song-maintenance
-{        
-  width: $full-width;
-  height: $maintenance-content-window-width;
 }
 
 .new-entry

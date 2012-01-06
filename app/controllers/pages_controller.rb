@@ -18,6 +18,7 @@ class PagesController < ApplicationController
 
   def maintenance
     @title = "Maintenance"
+    render :layout => "maintenance_layout"
   end
 
 end
