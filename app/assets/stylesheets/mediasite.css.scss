@@ -247,7 +247,7 @@ textarea
   @include rounded-bottom-corners;
 }
 
-.movie-column
+.left-column
 {
   width: $category-column-width;
   height:400px;
@@ -255,7 +255,7 @@ textarea
   border-right:1px solid $accent-color;
 }
 
-.show-column
+.center-column
 {
   width: $category-column-width;
   height:400px;
@@ -263,7 +263,7 @@ textarea
   border-right:1px solid $accent-color;
 }
 
-.music-column
+.right-column
 {
   width: $category-column-width;
   height:400px;
